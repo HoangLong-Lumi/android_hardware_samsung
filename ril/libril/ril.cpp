@@ -859,9 +859,11 @@ void RIL_onUnsolicitedResponse(int unsolResponse, const void *data,
         assert(rwlockRet == 0);
     }
 
-    ret = pRI->responseFunction(
-            (int) soc_id, responseType, 0, RIL_E_SUCCESS, const_cast<void*>(data),
-            datalen);
+    if (pRI->responseFunction) {
+        ret = pRI->responseFunction(
+                (int) soc_id, responseType, 0, RIL_E_SUCCESS, const_cast<void*>(data),
+                datalen);
+    }
 
     rwlockRet = pthread_rwlock_unlock(radioServiceRwlockPtr);
     assert(rwlockRet == 0);
