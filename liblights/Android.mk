@@ -26,6 +26,8 @@ LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_MODULE := liblights_helper
 LOCAL_MODULE_TAGS := optional
 
+LOCAL_VENDOR_MODULE := true
+
 include $(BUILD_STATIC_LIBRARY)
 
 ifneq ($(TARGET_PROVIDES_LIBLIGHT),true)
