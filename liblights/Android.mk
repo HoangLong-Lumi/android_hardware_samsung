@@ -21,7 +21,11 @@ LOCAL_SRC_FILES := lights_helper.c
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/include
 
-LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_SHARED_LIBRARIES := \
+    libutils \
+    libcutils \
+    liblog \
+    libhardware
 
 LOCAL_MODULE := liblights_helper
 LOCAL_MODULE_TAGS := optional
@@ -36,7 +40,12 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := lights.c
 
-LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_SHARED_LIBRARIES := \
+    libutils \
+    libcutils \
+    liblog \
+    libhardware
+
 LOCAL_STATIC_LIBRARIES := liblights_helper
 
 LOCAL_MODULE := lights.$(TARGET_BOARD_PLATFORM)

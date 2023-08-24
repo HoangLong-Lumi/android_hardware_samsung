@@ -19,8 +19,9 @@
 #define LOG_TAG "SamsungLightsHAL"
 /* #define LOG_NDEBUG 0 */
 
-#include <cutils/log.h>
+#include <log/log.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 #include <errno.h>

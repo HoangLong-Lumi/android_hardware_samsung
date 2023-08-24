@@ -21,7 +21,8 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <string.h>
-#include <cutils/log.h>
+#include <unistd.h>
+#include <log/log.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 
